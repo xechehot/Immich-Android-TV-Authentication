@@ -1,0 +1,9 @@
+services:
+  immich-tv-auth:
+    build: ..
+    container_name: immich-tv-auth
+    restart: unless-stopped
+    environment:
+      - API_KEY=${AUTH_SHARED_SECRET}   # must match the app's api_key string resource
+    ports:
+      - "5055:5000"   # host:container — change host port if 5055 is taken

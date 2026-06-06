@@ -62,10 +62,9 @@ app.post("/username", async (req, res) => {
                     method: 'POST',
                     body: JSON.stringify({
                         name: 'ImmichAndroidTV',
-                        // permissions: ["album.read", "activity.read", "asset.read", "asset.view", "asset.download", "album.read",
-                        //     "album.download", "archive.read", "face.read", "library.read", "timeline.read", "memory.read", "partner.read",
-                        //     "person.read", "session.read", "tag.read", "tag.asset"]
-                        permissions: ["all"]
+                        permissions: ["album.read", "activity.read", "asset.read", "asset.view", "asset.download",
+                            "album.download", "archive.read", "face.read", "library.read", "timeline.read",
+                            "memory.read", "partner.read", "person.read", "session.read", "tag.read", "tag.asset"]
                     }),
                     headers: {
                         'Content-Type': 'application/json',
