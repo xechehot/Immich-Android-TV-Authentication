@@ -1,6 +1,6 @@
 services:
   immich-tv-auth:
-    build: ..
+    image: ghcr.io/xechehot/immich-android-tv-authentication:latest
     container_name: immich-tv-auth
     restart: unless-stopped
     environment:

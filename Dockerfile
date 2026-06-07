@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . ./
 
-RUN npm install
+RUN rm -f .npmrc /root/.npmrc && npm install --registry https://registry.npmjs.org
 
 EXPOSE 5000
 
