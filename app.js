@@ -2,7 +2,7 @@ const path = require("path");
 const ExpiryMap = require('expiry-map');
 const http = require('http');
 const express = require('express');
-const app = require('@root/async-router').Router();
+const app = express.Router();
 
 const publicDir = path.join(__dirname, './public')
 
