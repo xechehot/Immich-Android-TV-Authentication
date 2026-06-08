@@ -32,7 +32,8 @@ app.post("/username", async (req, res) => {
             email, password, host
         });
     } else {
-        const url = `${host}/api/auth/login`;
+        const internalHost = process.env.IMMICH_INTERNAL_URL || host;
+        const url = `${internalHost}/api/auth/login`;
         const body = JSON.stringify({
             email,
             password
@@ -58,7 +59,7 @@ app.post("/username", async (req, res) => {
         if (loginResponse.accessToken) {
             let apiKeyResponse;
             try {
-                apiKeyResponse = await (await fetch(`${host}/api/api-keys`, {
+                apiKeyResponse = await (await fetch(`${internalHost}/api/api-keys`, {
                     method: 'POST',
                     body: JSON.stringify({
                         name: 'ImmichAndroidTV',
